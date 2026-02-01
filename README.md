@@ -75,7 +75,6 @@ Users can upload a CSV file containing chemical equipment data (Equipment Name, 
 ├── sample_equipment_data.csv     # Sample CSV for demo & testing
 ├── .gitignore
 ├── README.md                     # This file – setup instructions
-└── SUBMISSION.md                 # Submission checklist & form link
 ```
 
 ---
