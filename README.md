@@ -111,7 +111,7 @@ npm --version
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/chemical-equipment-visualizer.git
+git clone https://github.com/sweta123761/Chemical-Equipment-Parameter-Visualizer
 cd chemical-equipment-visualizer
 ```
 
@@ -215,7 +215,7 @@ Local: http://localhost:3000
 
 ---
 
-### 6. Desktop Frontend (PyQt5) – Optional
+### 6. Desktop Frontend (PyQt5) 
 
 **First-time setup (once):**
 ```bash
@@ -278,19 +278,10 @@ Required CSV columns:
 
 1. **Start Backend first** (Terminal 1): `cd backend` → activate venv → `python manage.py runserver`
 2. **Then start Web** (Terminal 2): `cd web-frontend` → `npm start`
-3. **Desktop** (optional): Backend must be running; then `cd desktop-app` → activate venv → `python main.py`
+3. **Desktop** : Backend must be running; then `cd desktop-app` → activate venv → `python main.py`
 
 See **Quick Reference** in Setup Instructions (section 7) for the exact commands.
 
----
-
-## Optional: Deployment (Web Version)
-
-- Backend: Deploy Django on a service (e.g. Heroku, Railway, PythonAnywhere).
-- Frontend: Build with `npm run build` and serve the `build/` folder (e.g. Vercel, Netlify).
-- Update API base URL in React to your deployed backend URL.
-
----
 
 ## Troubleshooting
 
