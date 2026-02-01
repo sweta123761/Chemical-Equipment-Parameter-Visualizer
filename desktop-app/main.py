@@ -12,7 +12,7 @@ import json
 
 
 API_BASE_URL = "http://localhost:8000/api"
-# Authentication removed for easier testing
+AUTH = ('admin', 'admin123')  # Basic authentication for API
 
 
 class MatplotlibWidget(QWidget):
@@ -116,7 +116,8 @@ class UploadWidget(QWidget):
                 files = {'file': f}
                 response = requests.post(
                     f"{API_BASE_URL}/upload/",
-                    files=files
+                    files=files,
+                    auth=AUTH
                 )
             
             if response.status_code == 201:
@@ -232,7 +233,7 @@ class HistoryWidget(QWidget):
     
     def load_history(self):
         try:
-            response = requests.get(f"{API_BASE_URL}/history/")
+            response = requests.get(f"{API_BASE_URL}/history/", auth=AUTH)
             if response.status_code == 200:
                 history = response.json()
                 self.history_list.clear()

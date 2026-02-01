@@ -16,7 +16,11 @@ function App() {
 
   const fetchHistory = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/history/');
+      const response = await fetch('http://localhost:8000/api/history/', {
+        headers: {
+          'Authorization': 'Basic ' + btoa('admin:admin123'),
+        },
+      });
       if (response.ok) {
         const data = await response.json();
         setHistory(data);

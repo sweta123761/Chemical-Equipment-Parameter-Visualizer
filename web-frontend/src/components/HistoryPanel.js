@@ -4,7 +4,11 @@ import './HistoryPanel.css';
 const HistoryPanel = ({ history, onSelectUpload }) => {
   const handleDownloadReport = async (uploadId) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/report/?id=${uploadId}`);
+      const response = await fetch(`http://localhost:8000/api/report/?id=${uploadId}`, {
+        headers: {
+          'Authorization': 'Basic ' + btoa('admin:admin123'),
+        },
+      });
       
       if (response.ok) {
         const blob = await response.blob();

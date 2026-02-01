@@ -128,7 +128,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',  # Changed to AllowAny for easier testing
+        'rest_framework.permissions.IsAuthenticated',
     ],
 }
 

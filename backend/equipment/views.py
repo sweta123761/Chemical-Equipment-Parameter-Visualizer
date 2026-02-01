@@ -1,7 +1,7 @@
 import pandas as pd
 from django.http import HttpResponse
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 from .models import EquipmentUpload
@@ -45,7 +45,7 @@ def process_csv_data(df):
 
 
 @api_view(['POST'])
-@permission_classes([])  # No authentication required
+@permission_classes([IsAuthenticated])
 def upload_csv(request):
     """Handle CSV file upload and process data."""
     if 'file' not in request.FILES:
@@ -96,7 +96,7 @@ def upload_csv(request):
 
 
 @api_view(['GET'])
-@permission_classes([])  # No authentication required
+@permission_classes([IsAuthenticated])
 def get_history(request):
     """Return summary of last 5 uploads."""
     uploads = EquipmentUpload.objects.order_by('-upload_timestamp')[:5]
@@ -105,7 +105,7 @@ def get_history(request):
 
 
 @api_view(['GET'])
-@permission_classes([])  # No authentication required
+@permission_classes([IsAuthenticated])
 def generate_report(request):
     """Generate PDF report based on analyzed data."""
     upload_id = request.GET.get('id')
