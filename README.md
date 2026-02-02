@@ -112,7 +112,7 @@ npm --version
 
 ```bash
 git clone https://github.com/sweta123761/Chemical-Equipment-Parameter-Visualizer
-cd chemical-equipment-visualizer
+cd Chemical-Equipment-Parameter-Visualizer
 ```
 
 ---
